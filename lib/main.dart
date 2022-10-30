@@ -18,10 +18,13 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/home': (context) => const FlashScreen(),
+        '/j': (context) => const FlashScreen(),
         '/': (context) => const HomeScreen(),
       },
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: "English",
+      ),
     );
   }
 }
