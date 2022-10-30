@@ -18,7 +18,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/j': (context) => const FlashScreen(),
+        '/k': (context) => const FlashScreen(),
         '/': (context) => const HomeScreen(),
       },
       debugShowCheckedModeBanner: false,

@@ -36,6 +36,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  syncfusion_flutter_sliders: ^20.3.52
 
 dev_dependencies:
   flutter_test:
@@ -80,9 +81,9 @@ flutter:
   fonts:
     - family: English
       fonts:
-        - asset: assets/fonts/SF-Pro-Display-Regular.otf
-        - asset: assets/fonts/SF-Pro-Display-RegularItalic.otf
-        - asset: assets/fonts/SF-Pro-Display-Bold.otf
+        - asset: assets/fonts/Oswald-Regular.ttf
+        - asset: assets/fonts/Oswald-Bold.ttf
+        - asset: assets/fonts/Roboto-Italic.ttf
           style: italic
     # - family: Trajan Pro
   #     fonts:
