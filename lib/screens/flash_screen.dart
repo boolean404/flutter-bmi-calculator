@@ -30,7 +30,7 @@ class _FlashScreenState extends State<FlashScreen> {
               style: const TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
-                color: AppColors.accent,
+                color: Colors.white,
               ),
             ),
           ),
@@ -66,7 +66,7 @@ class _FlashScreenState extends State<FlashScreen> {
                       "Developed by Bo Bo Aung",
                       style: TextStyle(
                         fontStyle: FontStyle.italic,
-                        color: AppColors.accent,
+                        color: Colors.white,
                       ),
                     ),
                   ),

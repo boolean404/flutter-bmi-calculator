@@ -32,7 +32,7 @@ class ReuseableWidget {
     );
   }
 
-  static Widget bottomCard(String titleText, int valueNo) {
+  static Widget bottomCard(String titleText, String valueNo, Widget widget) {
     return Card(
       color: AppColors.inactiveCardColor,
       child: Column(
@@ -46,28 +46,13 @@ class ReuseableWidget {
             ),
           ),
           Text(
-            "$valueNo",
+            valueNo,
             style: const TextStyle(
               color: Colors.white,
               fontSize: 30,
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              FloatingActionButton(
-                backgroundColor: AppColors.activeCardColor,
-                onPressed: () {},
-                child: const Icon(Icons.remove),
-              ),
-              const SizedBox(width: 10),
-              FloatingActionButton(
-                backgroundColor: AppColors.activeCardColor,
-                onPressed: () {},
-                child: const Icon(Icons.add),
-              ),
-            ],
-          )
+          widget,
         ],
       ),
     );

@@ -1,5 +1,7 @@
+import 'package:bmicalculator/components/app_colors.dart';
 import 'package:bmicalculator/screens/flash_screen.dart';
 import 'package:bmicalculator/screens/home_screen.dart';
+import 'package:bmicalculator/screens/result_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,13 +20,17 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/k': (context) => const FlashScreen(),
-        '/': (context) => const HomeScreen(),
+        '/': (context) => const FlashScreen(),
+        '/home': (context) => const HomeScreen(),
       },
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: "English",
-      ),
+          fontFamily: "English",
+          scaffoldBackgroundColor: AppColors.secondary,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: AppColors.secondary,
+            elevation: 10,
+          )),
     );
   }
 }
