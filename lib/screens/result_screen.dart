@@ -1,5 +1,5 @@
 import 'package:bmicalculator/components/app_colors.dart';
-import 'package:bmicalculator/components/bottom_button.dart';
+import 'package:bmicalculator/widgets/bottom_button.dart';
 import 'package:flutter/material.dart';
 
 class ResultScreen extends StatelessWidget {
@@ -7,6 +7,7 @@ class ResultScreen extends StatelessWidget {
   final String resultText;
   final String resultMsg;
   final Color color;
+  final String gender;
 
   const ResultScreen({
     super.key,
@@ -14,6 +15,7 @@ class ResultScreen extends StatelessWidget {
     required this.resultText,
     required this.resultMsg,
     required this.color,
+    required this.gender,
   });
 
   @override
@@ -45,7 +47,7 @@ class ResultScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Image.asset(
-                          "assets/images/$resultText.png",
+                          "assets/images/$resultText$gender.png",
                           width: 100,
                         ),
                         const SizedBox(

@@ -1,7 +1,7 @@
 import 'package:bmicalculator/components/app_colors.dart';
-import 'package:bmicalculator/components/bottom_button.dart';
+import 'package:bmicalculator/widgets/bottom_button.dart';
 import 'package:bmicalculator/components/calculate_bmi.dart';
-import 'package:bmicalculator/components/custom_rounded_icon.dart';
+import 'package:bmicalculator/widgets/custom_rounded_icon.dart';
 import 'package:bmicalculator/components/reuseable_widget.dart';
 import 'package:bmicalculator/screens/result_screen.dart';
 import 'package:flutter/material.dart';
@@ -18,24 +18,31 @@ class _HomeScreenState extends State<HomeScreen> {
   var maleCardColor = AppColors.inactiveCardColor;
   var femaleCardColor = AppColors.inactiveCardColor;
 
+  // genderimages
+  String selectedGender = "male";
+
   void updateColor(int genderNum) {
     if (genderNum == 1) {
       if (maleCardColor == AppColors.inactiveCardColor) {
         maleCardColor = AppColors.activeCardColor;
         femaleCardColor = AppColors.inactiveCardColor;
+        selectedGender = "male";
       }
     } else {
       if (femaleCardColor == AppColors.inactiveCardColor) {
         femaleCardColor = AppColors.activeCardColor;
         maleCardColor = AppColors.inactiveCardColor;
+        selectedGender = "female";
       }
     }
   }
 
   double height = 180.0;
   int intHeight = 180;
-  int weight = 50;
+  int weight = 100;
   int age = 18;
+  double heightInFeet = 5.9;
+  double heightInInches = 10;
 
   @override
   Widget build(BuildContext context) {
@@ -130,6 +137,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ),
                                       ],
                                     ),
+                                    Text(
+                                      "(${heightInFeet.toInt()}' ${heightInInches.toInt()}\")",
+                                      style: const TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.white,
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ),
@@ -154,6 +168,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                   setState(() {
                                     height = value;
                                     intHeight = value.toInt();
+                                    heightInFeet = value / 30.48;
+                                    heightInInches = (heightInFeet * 12) % 12;
                                   });
                                 },
                               ),
@@ -166,7 +182,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Expanded(
                             child: ReuseableWidget.bottomCard(
-                              "WEIGHT(kg)",
+                              "WEIGHT(lb)",
                               weight.toString(),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -247,7 +263,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   String resultMsg = cal.getMsg();
                   double intBMI = cal.getIntBMI();
                   Color bmiResultColor;
-                  
 
                   if (intBMI >= 25) {
                     bmiResultColor = Colors.red;
@@ -265,6 +280,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         resultText: resultText,
                         resultMsg: resultMsg,
                         color: bmiResultColor,
+                        gender: selectedGender,
                       ),
                     ),
                   );

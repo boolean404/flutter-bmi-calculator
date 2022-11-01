@@ -1,7 +1,6 @@
 import 'package:bmicalculator/components/app_colors.dart';
 import 'package:bmicalculator/screens/flash_screen.dart';
 import 'package:bmicalculator/screens/home_screen.dart';
-import 'package:bmicalculator/screens/result_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'app_colors.dart';
+import '../components/app_colors.dart';
 
 class CustomRoundedIcon extends StatelessWidget {
   const CustomRoundedIcon({

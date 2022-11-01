@@ -9,7 +9,7 @@ class CalculateBMI {
   double _bmi = 0.0;
 
   String getBMI() {
-    _bmi = weight / pow(height / 100, 2);
+    _bmi = (weight / 2.2046) / pow(height / 100, 2);
     return _bmi.toStringAsFixed(1);
   }
 
